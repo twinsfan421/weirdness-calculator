@@ -9,8 +9,10 @@ const GifResult = (props) => {
             <div className="card">
                 <span className="card-title">Your Result</span>
                 <div className="card-content">
-                    <div className="card small">
-                    { getGifResult.pending ? null : <GifResultImage />}
+                    <div className="container">
+                        <div className="card">
+                        { getGifResult.pending ? null : <GifResultImage />}
+                        </div>
                     </div>
                 </div>
             </div>
