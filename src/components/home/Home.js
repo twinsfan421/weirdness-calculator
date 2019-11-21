@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import SearchBar from './SearchBar'
 import GifResult from '../gifResult/GifResult'
+import LikedGifs from '../likedGifs/LikedGifs'
 
 const Home = (props) => {
     const { fetchedGif } = props
@@ -17,9 +18,10 @@ const Home = (props) => {
                             {fetchedGif.gif ? <GifResult /> : null}
                         </div>
                     </div>
-                    <div className="col s12 m5">
-                    </div> 
                 </div>
+                <div className="col s12 m5">
+                    <LikedGifs/>
+                </div> 
             </div>             
         </div>
     );
