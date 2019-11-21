@@ -1,12 +1,23 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import SearchBar from './SearchBar'
-import GifResult from '../gifResult/GifResult'
 
 const Home = (props) => {
     const { fetchedGif } = props
     return (
-        <p>hello from home</p>
+        <div className="home">
+            <div className="row">
+                <div className="col s12 m7">
+                    <div className="container">
+                        <div className="row">
+                            <SearchBar />
+                        </div>
+                    </div>
+                    <div className="col s12 m5">
+                    </div> 
+                </div>
+            </div>             
+        </div>
     );
 }
 
