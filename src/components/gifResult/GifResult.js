@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import GifResultImage from './GifResultImage';
 import Slider from './Slider';
+import LikeGifButton from './LikeGifButton';
 
 const GifResult = (props) => {
     const { getGifResult } = props
@@ -15,6 +16,7 @@ const GifResult = (props) => {
                         { getGifResult.pending ? null : <GifResultImage />}
                         </div>
                     </div>
+                    <LikeGifButton/>
                     <Slider/>
                 </div>
             </div>
