@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import GifResultImage from './GifResultImage';
+import Slider from './Slider';
 
 const GifResult = (props) => {
     const { getGifResult } = props
@@ -14,6 +15,7 @@ const GifResult = (props) => {
                         { getGifResult.pending ? null : <GifResultImage />}
                         </div>
                     </div>
+                    <Slider/>
                 </div>
             </div>
         </div>
