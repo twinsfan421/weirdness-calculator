@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import SearchBar from './SearchBar'
+import GifResult from '../gifResult/GifResult'
 
 const Home = (props) => {
     const { fetchedGif } = props
@@ -11,6 +12,9 @@ const Home = (props) => {
                     <div className="container">
                         <div className="row">
                             <SearchBar />
+                        </div>
+                        <div className="row">
+                            {fetchedGif.gif ? <GifResult /> : null}
                         </div>
                     </div>
                     <div className="col s12 m5">
