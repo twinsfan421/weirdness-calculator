@@ -1,7 +1,8 @@
 export const likeGif = (gif) => {
 	return {
 		type: 'LIKE_GIF',
-        gif
+        gif: gif.gif,
+        term: gif.term
 	}
 }
 

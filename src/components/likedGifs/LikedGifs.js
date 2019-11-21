@@ -1,16 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import GifCard from './GifCard'
 
 const LikedGifs = (props) => {
     const { likedGifs } = props
-    console.log(likedGifs)
     return (
         <div className="liked-gifs">
+            <h5>Your Liked Gifs</h5>
             <div className="row">
-                <div className="col s12 m5">
-                    <h1>hello</h1>
-                </div>
-            </div>             
+                { likedGifs && likedGifs.gifs.map(gif => {
+                        return(
+                            <div className="col s12 m5" key={gif.id}>
+                                <GifCard gif={gif}/>
+                            </div>
+                        )   
+                    })}
+            </div>           
         </div>
     );
 }

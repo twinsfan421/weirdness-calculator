@@ -1,6 +1,5 @@
 const initSate = {
-    gif: null,
-    term: null
+    gif: null
 }
 
 const fetchedGifReducer = (state = initSate, action) => {
@@ -8,12 +7,12 @@ const fetchedGifReducer = (state = initSate, action) => {
         case 'FETCH_GIF_FULFILLED':
             return {
                 ...state,
-                term: action.term,
                 gif: {
                     id: action.data.id,
                     title: action.data.title,
                     images_info: action.data.images,
-                    weirdness: action.weirdness
+                    weirdness: action.weirdness,
+                    term: action.term
                 }
             }
         default:
