@@ -4,8 +4,11 @@ import { connect } from 'react-redux'
 const GifResultImage = ({fetchedGif}) => {
     if (fetchedGif.gif.images_info) {
         return (
-            <div className="card-image">
-                <img src={fetchedGif.gif.images_info.fixed_width.url} alt="gif"/>
+            <div>
+                <span className="card-title center">{fetchedGif.gif.title}</span>
+                <div className="card-image">
+                    <img src={fetchedGif.gif.images_info.fixed_height.url} alt="gif"/>
+                </div>
             </div>
         )
     } else {
