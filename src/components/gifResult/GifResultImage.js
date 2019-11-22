@@ -16,8 +16,7 @@ const GifResultImage = ({fetchedGif}) => {
             <div className="card-image">
                 <img src="noimage.jpg" alt="no gif for search"/>
                 <p>There was no image for your search</p>
-            </div>
-            
+            </div>  
         )
     }
 };
