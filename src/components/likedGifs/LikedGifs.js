@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import GifCard from './GifCard'
 import { Link } from 'react-router-dom';
+import UnlikeGifButton from './UnlikeGifButton';
 
 const LikedGifs = (props) => {
     const { likedGifs } = props
@@ -12,6 +13,7 @@ const LikedGifs = (props) => {
                 { likedGifs && likedGifs.gifs.map(gif => {
                     return(
                         <div className="col s12 m5" key={gif.id}>
+                            <UnlikeGifButton gif={gif}/>
                             <GifCard gif={gif}/>
                         </div>
                     )   
@@ -22,7 +24,7 @@ const LikedGifs = (props) => {
                 state: {gifs: likedGifs}
                 }}>
                 <button className="btn blue">CALCULATE MY WEIRDNESS SCORE</button>
-            </Link>           
+            </Link>    
         </div>
     );
 }

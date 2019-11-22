@@ -9,6 +9,7 @@ export const likeGif = (gif) => {
 export const unlikeGif = (gif) => {
 	return {
 		type: 'UNLIKE_GIF',
-        gif
+        gif: gif,
+        term: gif.term
 	}
 }
