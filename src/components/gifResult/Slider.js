@@ -4,7 +4,7 @@ import { getGif } from '../../store/actions/getGifActions'
 
 class Slider extends Component {
     handleChange = (e) => {
-        this.props.getGif(this.props.fetchedGif.term, e.target.value)
+        this.props.getGif(this.props.fetchedGif.gif.term, e.target.value)
     }
     render() {
         return (
