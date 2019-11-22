@@ -11,8 +11,8 @@ class SearchBar extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.getGif(this.state.term, 0)
-        this.setState({term: ""})
+        this.props.getGif(this.state.term, "0")
+        this.setState({term: " "})
     }
     render() {
         return (

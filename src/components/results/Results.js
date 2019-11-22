@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 class Results extends Component {
     render() {
         const { likedGifs } = this.props
-        const result = Math.round((likedGifs.gifs.map(g => g.weirdness).reduce((a, b) => a + b, 0)) / 5)
+        console.log(likedGifs)
+        const result = Math.round((likedGifs.gifs.map(g => parseInt(g.weirdness)).reduce((a, b) => a + b, 0)) / 5)
         return (
             <div className="search-bar">
                 <div className="row">
