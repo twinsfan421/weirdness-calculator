@@ -5,7 +5,7 @@ import GifResult from '../gifResult/GifResult'
 import LikedGifs from '../likedGifs/LikedGifs'
 
 const Home = (props) => {
-    const { fetchedGif } = props
+    const { fetchedGif, likedGifs } = props
     return (
         <div className="home">
             <div className="row">
@@ -20,7 +20,7 @@ const Home = (props) => {
                     </div>
                 </div>
                 <div className="col s12 m5">
-                    <LikedGifs/>
+                    { likedGifs.gifs.length > 0 ? <LikedGifs/> : null }
                 </div> 
             </div>             
         </div>
@@ -29,7 +29,8 @@ const Home = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        fetchedGif: state.fetchedGif
+        fetchedGif: state.fetchedGif,
+        likedGifs: state.likedGifs
     }
 }
 
