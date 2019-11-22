@@ -19,7 +19,6 @@ class LikeGifButton extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
         fetchedGif: state.fetchedGif,
         alreadyLikedterms: state.likedGifs.alreadyLikedterms
