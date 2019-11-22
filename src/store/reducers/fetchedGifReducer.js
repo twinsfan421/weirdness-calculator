@@ -15,6 +15,11 @@ const fetchedGifReducer = (state = initSate, action) => {
                     term: action.term
                 }
             }
+        case 'LIKE_GIF':
+            return {
+                ...state,
+                gif: null
+            }
         default:
             return state
     }
