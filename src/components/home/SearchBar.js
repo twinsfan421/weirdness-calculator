@@ -4,15 +4,15 @@ import { getGif } from '../../store/actions/getGifActions'
 
 class SearchBar extends Component {
     state = {
-        term: ' ',
+        term:"",
     }
     handleChange = (e) => {
         this.setState({ term: e.target.value })
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.getGif(this.state.term, "0")
-        this.setState({term: " "})
+        this.props.getGif(this.state.term, 0)
+        this.setState({term: ""})
     }
     render() {
         return (
@@ -29,11 +29,11 @@ class SearchBar extends Component {
                 <form onSubmit={this.handleSubmit} >
                     <label className="input-field col s7"htmlFor="term">Search Term</label>
                     <div className="input-field col s7">
-                            <input type="text" id="term" value={this.state.term} onChange={this.handleChange} />
+                            <input type="text" id="term" value={this.state.term} onChange={this.handleChange} required/>
                     </div>
                     <div className="input-field col s5">
-                            <button className="btn blue">SEARCH</button>
-                        </div>
+                        <button className="btn blue">SEARCH</button>
+                    </div>
                 </form>
             </div>
         )

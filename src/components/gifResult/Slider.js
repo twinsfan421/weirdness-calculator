@@ -8,7 +8,7 @@ class Slider extends Component {
     }
     handleChange = (e) => {
         this.setState({weirdness: e.target.value})
-        this.props.getGif(this.props.gif.term, e.target.value)
+        this.props.getGif(this.props.gif.term, parseInt((e.target.value)))
     }
     componentDidUpdate(prevProps) {
         if (prevProps.gif.term !== this.props.gif.term) this.setState({weirdness: '0'})

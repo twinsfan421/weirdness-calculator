@@ -8,7 +8,7 @@ class Results extends Component {
         const { likedGifs } = this.props
         if (likedGifs) {
             if ( likedGifs.gifs.length !== 5) return <Redirect to='/' />
-            const result = Math.round((likedGifs.gifs.map(g => parseInt(g.weirdness)).reduce((a, b) => a + b, 0)) / 5)
+            const result = Math.round((likedGifs.gifs.map(g => g.weirdness).reduce((a, b) => a + b, 0)) / 5)
             return (
                 <div className="search-bar">
                     <div className="row">
