@@ -1,19 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import GifResultImage from './GifResultImage';
 import Slider from './Slider';
 import LikeGifButton from './LikeGifButton';
+import GifCard from '../likedGifs/GifCard';
 
 const GifResult = (props) => {
-    const { getGifResult } = props
+    const { getGifResult,  gif } = props
     return (
         <div className="row">
             <div className="card">
                 <span className="card-title">Your Result</span>
                 <div className="card-content">
                     <div className="container">
-                        <div className="card">
-                        { getGifResult.pending ? <p>loading...</p> : <GifResultImage />}
+                        <div className="center">
+                        { getGifResult.pending ? <p>loading...</p> : <GifCard gif={gif} />}
                         </div>
                     </div>
                     <LikeGifButton/>
@@ -26,7 +26,8 @@ const GifResult = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        getGifResult: state.getGifResult
+        getGifResult: state.getGifResult,
+        gif: state.fetchedGif.gif
     }
 }
 
