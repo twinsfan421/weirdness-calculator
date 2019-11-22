@@ -13,7 +13,7 @@ const GifResult = (props) => {
                 <div className="card-content">
                     <div className="container">
                         <div className="card">
-                        { getGifResult.pending ? null : <GifResultImage />}
+                        { getGifResult.pending ? <p>loading...</p> : <GifResultImage />}
                         </div>
                     </div>
                     <LikeGifButton/>
