@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import GifCard from '../cards/GifCard'
+import SmallGifCard from '../cards/SmallGifCard'
 import { Link } from 'react-router-dom';
 import UnlikeGifButton from './UnlikeGifButton';
 import './LikedGifs.css'
@@ -17,7 +17,7 @@ const LikedGifs = (props) => {
                     return(
                         <div className="col s6 liked-gif-card" key={gif.id}>
                             <UnlikeGifButton gif={gif}/>
-                            <GifCard gif={gif}/>
+                            <SmallGifCard gif={gif}/>
                         </div>
                     )
                 })}

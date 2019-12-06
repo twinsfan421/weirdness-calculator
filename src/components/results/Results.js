@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import GifCard from '../cards/GifCard'
+import SmallGifCard from '../cards/SmallGifCard'
 import { Link, Redirect } from 'react-router-dom';
 
 class Results extends Component {
@@ -12,14 +12,14 @@ class Results extends Component {
             return (
                 <div className="search-bar">
                     <div className="container">
-                        <h4 className="center">You scored a {result} of 10 on the weirdness scale!</h4>
-                        <h6 className="center">The Gifs you liked</h6>
-                        <div className="row">
+                        <h4 className="center section">You scored a {result} of 10 on the weirdness scale!</h4>
+                        <h6 className="section">The Gifs you liked</h6>
+                        <div className="row section">
                             <div className="col m1 hide-on-small-only"></div>
                             { likedGifs.gifs.map(gif => {
                                 return(
                                     <div className="col s12 m2" key={gif.id}>
-                                        <GifCard gif={gif}/>
+                                        <SmallGifCard gif={gif}/>
                                         <p className="center">{gif.weirdness}/10</p>
                                     </div>
                                 )   
