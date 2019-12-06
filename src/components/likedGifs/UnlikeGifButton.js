@@ -9,9 +9,7 @@ class UnlikeGifButton extends Component {
     }
     render() {
         return (
-            <div className="row">
-                <div className="right"><button className="btn red" onClick={this.handleClick}><i className="material-icons">remove_circle</i></button></div>
-            </div>             
+            <div className="section"><button className="btn red right" onClick={this.handleClick}><i className="material-icons">remove_circle</i></button></div>   
         )
     }
 }

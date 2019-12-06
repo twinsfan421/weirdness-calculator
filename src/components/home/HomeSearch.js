@@ -17,7 +17,7 @@ class HomeSearch extends Component {
     }
     render() {
         return (
-            <div className="col s12">
+            <div className="search-bar">
                 <div>
 			    	<p>
 	    	      	  Find out how weird you are by selecting the GIFs that make you laugh.

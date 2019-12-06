@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import SearchBar from './SearchBar'
 import GifResult from '../gifResult/GifResult'
 import LikedGifs from '../likedGifs/LikedGifs'
+import HomeSearch from './HomeSearch'
 
 const Home = (props) => {
     const { fetchedGif, likedGifs, getGifResult } = props
@@ -15,13 +15,9 @@ const Home = (props) => {
                         {error ?
                             <p className="red-text">There was an error processing your request: 
                             {error.status} {error.statusText}</p> : null
-                         }
-                        <div className="row">
-                            <SearchBar />
-                        </div>
-                        <div className="row">
+                            }
+                            <HomeSearch />
                             {fetchedGif.gif ? <GifResult /> : null}
-                        </div>
                     </div>
                 </div>
                 <div className="col s12 m5">

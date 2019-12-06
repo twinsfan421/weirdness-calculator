@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import GifCard from './GifCard'
+import GifCard from '../cards/GifCard'
 import { Link } from 'react-router-dom';
 import UnlikeGifButton from './UnlikeGifButton';
+import './LikedGifs.css'
 
 const LikedGifs = (props) => {
     const { likedGifs } = props
@@ -14,11 +15,11 @@ const LikedGifs = (props) => {
             <div className="row">
                 { likedGifs && likedGifs.gifs.map(gif => {
                     return(
-                        <div className="col s12 m5" key={gif.id}>
+                        <div className="col s6 liked-gif-card" key={gif.id}>
                             <UnlikeGifButton gif={gif}/>
                             <GifCard gif={gif}/>
                         </div>
-                    )   
+                    )
                 })}
             </div>
             <div className="center">            

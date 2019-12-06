@@ -11,7 +11,7 @@ class LikeGifButton extends Component {
         const alreadyliked = likedGifs.alreadyLikedterms.includes(fetchedGif.gif.term)
         const fiveLikes = likedGifs.gifs.length > 4 ? true : false
         return (
-            <div className="row center">
+            <div className="center">
                 { fiveLikes ? <p className="red-text">5 likes Max</p> : null}
                 { alreadyliked ? <p className="red-text">you already liked a gif with that search term, start a new search</p> :
                 <button className="btn" onClick={this.handleClick} disabled={fiveLikes}><i className="material-icons">thumb_up</i></button> }

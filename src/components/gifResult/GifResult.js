@@ -2,23 +2,21 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Slider from './Slider';
 import LikeGifButton from './LikeGifButton';
-import GifCard from '../likedGifs/GifCard';
+import GifCard from '../cards/GifCard';
 
 const GifResult = (props) => {
     const { getGifResult,  gif } = props
     return (
-        <div className="row">
-            <div className="card">
-                <span className="card-title">Your Result</span>
-                <div className="card-content">
-                    <div className="container">
-                        <div className="center">
-                        { getGifResult.pending ? <p>loading...</p> : <GifCard gif={gif} />}
-                        </div>
+        <div className="card">
+            <span className="card-title">Your Result</span>
+            <div className="card-content">
+                <div className="container">
+                    <div className="center">
+                    { getGifResult.pending ? <p>loading...</p> : <GifCard gif={gif} />}
                     </div>
-                    <LikeGifButton/>
-                    <Slider/>
                 </div>
+                <LikeGifButton/>
+                <Slider/>
             </div>
         </div>
     )

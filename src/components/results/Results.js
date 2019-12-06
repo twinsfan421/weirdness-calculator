@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import GifCard from '../likedGifs/GifCard'
+import GifCard from '../cards/GifCard'
 import { Link, Redirect } from 'react-router-dom';
 
 class Results extends Component {
@@ -11,10 +11,11 @@ class Results extends Component {
             const result = Math.round((likedGifs.gifs.map(g => g.weirdness).reduce((a, b) => a + b, 0)) / 5)
             return (
                 <div className="search-bar">
-                    <div className="row">
-                        <div className="container">
-                            <h4 className="center">You scored a {result} of 10 on the weirdness scale!</h4>
-                            <h6>The Gifs you liked</h6>
+                    <div className="container">
+                        <h4 className="center">You scored a {result} of 10 on the weirdness scale!</h4>
+                        <h6 className="center">The Gifs you liked</h6>
+                        <div className="row">
+                            <div className="col m1 hide-on-small-only"></div>
                             { likedGifs.gifs.map(gif => {
                                 return(
                                     <div className="col s12 m2" key={gif.id}>
@@ -23,6 +24,7 @@ class Results extends Component {
                                     </div>
                                 )   
                             })}
+                            <div className="col m1 hide-on-small-only"></div>
                         </div>
                     </div>
                     <div className="row center">
