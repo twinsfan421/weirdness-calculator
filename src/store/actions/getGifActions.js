@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getGif = (term, weirdness) => {
     
-    const API_KEY = 'NZ5TqKkRZ776K6eusUK66SYJ9AAinR7S'
+    const API_KEY = process.env.REACT_APP_GIPHY_API_KEY
 
     return (dispatch, getState) => {
         dispatch({type: "FETCH_GIF_PENDING"})
