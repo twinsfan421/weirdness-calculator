@@ -16,7 +16,7 @@ class Slider extends Component {
     render() {
         const weirdness = this.state.weirdness
         return (
-            <div className="search-bar">
+            <div className="search-bar section">
                 <form action="#">
                     <p className="range-field">
                         <input type="range" id="weirdness" min="0" max="10" value={weirdness} onChange={this.handleChange} />

@@ -3,22 +3,22 @@ import React from 'react'
 const GifCard = ({gif}) => {
         if (gif.images_info) {
             return (
-                <div className="gif-card">
-                    <span className="center">{gif.title}</span>
+                <div>
+                    <span className="center">{gif.title ? gif.title : "No Title"}</span>
                     <div className="card">
                         <div className="card-image">
-                            <img className="responsive-img" src={gif.images_info.fixed_height.url} alt="gif"/>
+                            <img className="gif-image" src={gif.images_info.fixed_width.url} alt="gif"/>
                         </div>
                     </div>
                 </div>
             )
         } else {
             return (
-                <div className="no-image-gif-card">
-                    <div className="card medium">
+                <div>
+                    <span className="center">There was no image for your search</span>
+                    <div className="card">
                         <div className="card-image">
-                            <img src="noimage.jpg" alt="no gif for search"/>
-                            <p>There was no image for your search</p>
+                            <img className="gif-image" src="noimage.jpg" alt="no gif for search"/>
                         </div>
                     </div>
                 </div>

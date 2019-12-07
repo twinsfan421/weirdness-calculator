@@ -1,0 +1,11 @@
+.gif-result-card {
+    height: 350px;
+}
+
+.gif-image{
+    max-height: 300px;
+}
+
+.loading-image{
+    max-height: 300px;
+}
