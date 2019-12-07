@@ -12,12 +12,12 @@ const Home = (props) => {
             <div className="row">
                 <div className="col s12 m7">
                     <div className="container">
-                        {error ?
+                        {  error ?
                             <p className="red-text">There was an error processing your request: 
                             {error.status} {error.statusText}</p> : null
-                            }
-                            <HomeSearch />
-                            {fetchedGif.gif ? <GifResult /> : null}
+                        }
+                        <HomeSearch />
+                        { fetchedGif.activeSearch ? <GifResult /> : null}
                     </div>
                 </div>
                 <div className="col s12 m5">

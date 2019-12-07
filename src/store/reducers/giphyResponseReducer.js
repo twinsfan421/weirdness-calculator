@@ -1,7 +1,6 @@
 const initSate = {
     pending: false,
-    error: null,
-    searching: false
+    error: null
 }
 
 const giphyResponseReducer = (state = initSate, action) => {
@@ -9,21 +8,18 @@ const giphyResponseReducer = (state = initSate, action) => {
         case 'FETCH_GIF_PENDING':
             return {
                 ...state,
-                pending: true,
-                searching: true
+                pending: true
             }
         case 'FETCH_GIF_ERROR':
             return {
                 ...state,
                 pending: false,
-                error: action.err,
-                searching: false
+                error: action.err
             }
         case 'FETCH_GIF_FULFILLED':
             return {
                 ...state,
-                pending: false,
-                searching: true
+                pending: false
             }
         default:
             return state

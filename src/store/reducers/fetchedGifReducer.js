@@ -1,5 +1,6 @@
 const initSate = {
-    gif: null
+    gif: null,
+    activeSearch: false
 }
 
 const fetchedGifReducer = (state = initSate, action) => {
@@ -13,12 +14,14 @@ const fetchedGifReducer = (state = initSate, action) => {
                     images_info: action.data.images,
                     weirdness: action.weirdness,
                     term: action.term
-                }
+                },
+                activeSearch: true
             }
         case 'LIKE_GIF':
             return {
                 ...state,
-                gif: null
+                gif: null,
+                activeSearch: false
             }
         default:
             return state
