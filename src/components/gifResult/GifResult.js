@@ -5,14 +5,14 @@ import LikeGifButton from './LikeGifButton';
 import GifCard from '../cards/GifCard';
 
 const GifResult = (props) => {
-    const { getGifResult,  gif } = props
+    const { giphyResponse,  gif } = props
     return (
         <div className="card">
             <span className="card-title">Your Result</span>
             <div className="card-content">
                 <div className="container">
                     <div className="center">
-                    { getGifResult.pending ? <p>loading...</p> : <GifCard gif={gif} />}
+                    { giphyResponse.pending ? <p>loading...</p> : <GifCard gif={gif} />}
                     </div>
                 </div>
                 <LikeGifButton/>
@@ -24,7 +24,7 @@ const GifResult = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        getGifResult: state.getGifResult,
+        giphyResponse: state.giphyResponse,
         gif: state.fetchedGif.gif
     }
 }

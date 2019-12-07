@@ -11,18 +11,20 @@ const LikedGifs = (props) => {
     const disableCalulate = length !== 5 ? true : false
     return (
         <div className="liked-gifs">
-            <h5>YOUR LIKED GIFS</h5>
-            <div className="row">
-                { likedGifs && likedGifs.gifs.map(gif => {
-                    return(
-                        <div className="col s6 liked-gif-card" key={gif.id}>
-                            <UnlikeGifButton gif={gif}/>
-                            <SmallGifCard gif={gif}/>
-                        </div>
-                    )
-                })}
+            <div className="container">
+                <h5>YOUR LIKED GIFS</h5>
+                <div className="row">
+                    { likedGifs && likedGifs.gifs.map(gif => {
+                        return(
+                            <div className="col s12 m6 liked-gif-card" key={gif.id}>
+                                <UnlikeGifButton gif={gif}/>
+                                <SmallGifCard gif={gif}/>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
-            <div className="center">            
+            <div className="center section">            
                 <Link to={{pathname: "/results", state: {gifs: likedGifs}}}>
                     <button className="btn blue" disabled={disableCalulate}>CALCULATE MY WEIRDNESS SCORE</button>
                 </Link>     
