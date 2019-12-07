@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import GifResult from '../gifResult/GifResult'
+import GifSearchResult from '../gifSearchResult/GifSearchResult'
 import LikedGifs from '../likedGifs/LikedGifs'
 import HomeSearch from './HomeSearch'
 
@@ -17,7 +17,7 @@ const Home = (props) => {
                             {error.status} {error.statusText}</p> : null
                         }
                         <HomeSearch />
-                        { fetchedGif.activeSearch ? <GifResult /> : null}
+                        { fetchedGif.activeSearch ? <GifSearchResult /> : null}
                     </div>
                 </div>
                 <div className="col s12 m5">

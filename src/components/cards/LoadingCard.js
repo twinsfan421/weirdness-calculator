@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Loading = () => {
+const LoadingCard = () => {
     return (
         <div>
             <span className="center">Loading...</span>
@@ -13,4 +13,4 @@ const Loading = () => {
     )
 };
 
-export default Loading;
+export default LoadingCard;

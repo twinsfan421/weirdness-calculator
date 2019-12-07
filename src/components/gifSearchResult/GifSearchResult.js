@@ -3,17 +3,17 @@ import { connect } from 'react-redux'
 import Slider from './Slider';
 import LikeGifButton from './LikeGifButton';
 import GifCard from '../cards/GifCard';
-import Loading from '../cards/Loading';
-import './GifResult.css'
+import LoadingCard from '../cards/LoadingCard';
+import './GifSearchResult.css'
 
-const GifResult = (props) => {
+const GifSearchResult = (props) => {
     const { giphyResponse,  gif } = props
     return (
         <div className="card">
             <span className="card-title">Your Result</span>
             <div className="card-content">
                 <div className="container gif-result-card">
-                    { giphyResponse.pending ? <Loading/> : <GifCard gif={gif} />}
+                    { giphyResponse.pending ? <LoadingCard/> : <GifCard gif={gif} />}
                 </div>
                 <LikeGifButton/>
                 <Slider/>
@@ -29,4 +29,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(GifResult);
+export default connect(mapStateToProps)(GifSearchResult);
